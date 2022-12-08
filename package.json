@@ -32,8 +32,10 @@
     "console.table": "^0.10.0",
     "dotenv": "^16.0.3",
     "handlebars": "^4.7.7",
+    "heroku": "^7.67.1",
     "inquirer": "^9.1.4",
     "mysql2": "^2.3.3",
+    "normalize.css": "^8.0.1",
     "sequelize": "^6.26.0"
   }
 >>>>>>> main
