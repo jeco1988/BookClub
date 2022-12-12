@@ -1,5 +1,5 @@
 {
-<<<<<<< HEAD
+
   "name": "bookclub",
   "version": "1.0.0",
   "description": "BookClub is an online book enthusiasts database whereby the user can login and submit their recommended book title, along with an image and a brief review.",
@@ -15,19 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "handlebars": "^4.7.3",
-    "mysql2": "^2.1.0",
-    "sequelize": "^5.21.5"
-  },
-  "bugs": {
-    "url": "https://github.com/jeco1988/BookClub/issues"
-  },
-  "homepage": "https://github.com/jeco1988/BookClub#readme"
-=======
-  "dependencies": {
     "bootstrap": "^5.2.3",
     "console.table": "^0.10.0",
     "dotenv": "^16.0.3",
@@ -37,6 +24,10 @@
     "mysql2": "^2.3.3",
     "normalize.css": "^8.0.1",
     "sequelize": "^6.26.0"
-  }
->>>>>>> main
+  },
+  "bugs": {
+    "url": "https://github.com/jeco1988/BookClub/issues"
+  },
+  "homepage": "https://github.com/jeco1988/BookClub#readme"
+
 }
