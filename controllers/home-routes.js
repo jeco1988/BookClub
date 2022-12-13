@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Book = require('../models/Book');
 const Review = require('../models/Review');
 const Favourite = require('../models/Favourite');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
@@ -42,7 +43,7 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.get('/favourites', async (req, res) => {
+  router.get('/favourites', withAuth, async (req, res) => {
         try {
           const favouriteData = await Favourite.findAll({
             include: [
