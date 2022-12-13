@@ -6,5 +6,6 @@ const favouriteRoutes = require('./favourite-routes');
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
+router.use('./favourite-routes', favouriteRoutes);
 
 module.exports = router;
