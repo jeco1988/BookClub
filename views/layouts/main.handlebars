@@ -1,5 +1,5 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,6 +7,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+  
+      <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
     crossorigin="anonymous">
@@ -16,24 +18,78 @@
   <link rel="stylesheet" href="/public/css/style.css">
 </head>
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        &#128214 Welcome to BookClub! &#128214
-      </h1>
-    </header>
-      <main class="container container-fluid mt-5">
-        {{{ body }}}
-      </main>
-  </div>
+  <body>
+    {{!-- Container --}}
+    
+      {{!-- Navbar --}}
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
+        <a class="navbar-brand" href="/">
+        <img src="/assets/BookClub.png" style="width: 150px;" height="150px" class="img-fluid"></a>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navigator" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/views/mustread.handlebars">Must Reads</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/views/recentreviews.handlebars">Recent Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/views/favourites.handlebars">My Favourites</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/public/js/logout.js">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>  {{!-- /Navbar --}}
+      <div class="container">
+
+      {{{ body }}}
+
+
+    </div>  {{!-- /Container --}}
+
+    <br>
+    <footer class="footer bg-dark text-light p-4" style="text-align: center; justify-content: center;">
+      © Copyright 2022 BookClub
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Moments.js -->
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+
+    <!-- Main JS -->
+    {{!-- <script src="/server.js"></script> --}}
+    {{#each js}}
+    {{!-- {{this}} --}}
+      <script src="/js/{{this}}"></script>
+    {{/each}}
   </body>
-      
-      <div class="footer">
-      <div id="button"></div>
-      <div id="container">
-      <div id="cont">
-    <div class="footer_center">
-      <h3>© Copyright 2022 BookClub</h3>
-    </div>
+  
 </html>
