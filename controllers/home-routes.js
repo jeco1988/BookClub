@@ -11,7 +11,6 @@ router.get('/', async (req, res) => {
       });
 
       const books = bookData.map((book) => book.get({ plain: true }));
-      console.log(books);
       res.render('mustread', { 
         books,
         // logged_in: req.session.logged_in 
@@ -25,10 +24,7 @@ router.get('/', async (req, res) => {
   router.get('/recentreviews', async (req, res) => {
     try {
       const reviewsData = await Review.findAll({
-        include: [
-          {
-            order: [['review_date', 'ASC']],
-          }],
+       order: [['review_date', 'ASC']],
       });
 
       const reviews = reviewsData.map((review) => review.get({ plain: true }));
@@ -36,11 +32,13 @@ router.get('/', async (req, res) => {
         reviews,
       });
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   });
 
-  router.get('/favourites', withAuth, async (req, res) => {
+  router.get('/favourites', //withAuth,
+   async (req, res) => {
         try {
           const favouriteData = await Favourite.findAll({
             include: [
@@ -52,7 +50,7 @@ router.get('/', async (req, res) => {
           const favourites = favouriteData.map((favourite) => favourite.get({ plain: true }));
           res.render('favourites', { 
             favourites,
-            logged_in: true
+            // logged_in: true
           });
         } catch (err) {
           res.status(500).json(err);
@@ -61,12 +59,18 @@ router.get('/', async (req, res) => {
 
   router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/favourites');
-      return;
-    }
+    // if (req.session.logged_in) {
+    //   res.redirect('/favourites');
+    //   return;
+    // }
   
     res.render('login');
+  });
+
+  router.get('/signup', (req, res) => {
+
+  
+    res.render('signup');
   });
 
   module.exports = router;
