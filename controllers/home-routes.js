@@ -37,7 +37,8 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.get('/favourites', withAuth, async (req, res) => {
+  router.get('/favourites', //withAuth,
+   async (req, res) => {
         try {
           const favouriteData = await Favourite.findAll({
             include: [
@@ -49,7 +50,7 @@ router.get('/', async (req, res) => {
           const favourites = favouriteData.map((favourite) => favourite.get({ plain: true }));
           res.render('favourites', { 
             favourites,
-            logged_in: true
+            // logged_in: true
           });
         } catch (err) {
           res.status(500).json(err);
