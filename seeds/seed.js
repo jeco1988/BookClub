@@ -2,18 +2,15 @@ const sequelize = require('../config/connection');
 const seedUser = require('./userseed');
 const seedReview = require('./reviewseed');
 const seedBook = require('./bookseed');
-const seedReview = require('./reviewseed');
+const seedFavourite = require('./favouriteseed');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
   await seedUser();
-
-  await seedReview();
-
   await seedBook();
-
   await seedReview();
+  await seedFavourite();
 
   process.exit(0);
 };

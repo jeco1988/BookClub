@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
+const session = require("express-session");
 const PORT = process.env.PORT || 3001;
 const sequelize = require('./config/connection');
 const routes = require('./controllers')
@@ -12,7 +13,9 @@ app.set('view engine', 'handlebars');
 
 
 // session
-
+app.use(session({ secret: "secret", resave: true, saveUninitialized: true }));
+app.use(sequelize.initialize());
+app.use(sequelize.session());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
