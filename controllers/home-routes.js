@@ -11,7 +11,6 @@ router.get('/', async (req, res) => {
       });
 
       const books = bookData.map((book) => book.get({ plain: true }));
-      console.log(books);
       res.render('mustread', { 
         books,
         // logged_in: req.session.logged_in 
@@ -25,10 +24,7 @@ router.get('/', async (req, res) => {
   router.get('/recentreviews', async (req, res) => {
     try {
       const reviewsData = await Review.findAll({
-        include: [
-          {
-            order: [['review_date', 'ASC']],
-          }],
+       order: [['review_date', 'ASC']],
       });
 
       const reviews = reviewsData.map((review) => review.get({ plain: true }));
@@ -36,6 +32,7 @@ router.get('/', async (req, res) => {
         reviews,
       });
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   });
