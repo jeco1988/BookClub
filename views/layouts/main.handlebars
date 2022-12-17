@@ -16,6 +16,7 @@
   <title>BookClub</title>
   <link rel="stylesheet" href="/public/css/jass.css">
   <link rel="stylesheet" href="/public/css/style.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
   <body>
@@ -24,7 +25,7 @@
       {{!-- Navbar --}}
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
         <a class="navbar-brand" href="/">
-        <img src="/assets/BookClub.png" style="width: 150px;" height="150px" class="img-fluid"></a>
+        <img src="/public/assets/BookClub.png" style="width: 150px;" height="150px" class="img-fluid"></a>
         </a>
         <button
           class="navbar-toggler"
@@ -43,16 +44,19 @@
               <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/views/mustread.handlebars">Must Reads</a>
+              <a class="nav-link" href="/views/mustread">Must Reads</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/views/recentreviews.handlebars">Recent Reviews</a>
+              <a class="nav-link" href="/views/recentreviews">Recent Reviews</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/views/favourites.handlebars">My Favourites</a>
+              <a class="nav-link" href="/views/favourites">My Favourites</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/public/js/logout.js">Logout</a>
+              <a class="nav-link" href="/logout">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
             </li>
           </ul>
         </div>
@@ -65,7 +69,7 @@
     </div>  {{!-- /Container --}}
 
     <br>
-    <footer class="footer bg-dark text-light p-4" style="text-align: center; justify-content: center;">
+    <footer class="footer bg-dark text-light p-4" style="text-align: center; justify-content: center; position: fixed; bottom: 0; width: 100%">
       © Copyright 2022 BookClub
     </footer>
 
