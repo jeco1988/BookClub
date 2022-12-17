@@ -4,19 +4,13 @@ const Review = require('./Review');
 const Favourite = require('./Favourite');
 
 
-User.hasMany(Favourite, {
-    foreignKey: 'user_id',
-});
-  
-Favourite.belongsTo(User, {
+User.belongsToMany(Book, {
+    through: Favourite,
     foreignKey: 'user_id',
 });
 
-Book.hasMany(Favourite, {
-    foreignKey: 'book_id',
-});
-  
-Favourite.belongsTo(Book, {
+Book.belongsToMany(User, {
+    through: Favourite,
     foreignKey: 'book_id',
 });
 

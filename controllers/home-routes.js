@@ -40,14 +40,16 @@ router.get('/', async (req, res) => {
   router.get('/favourites', //withAuth,
    async (req, res) => {
         try {
-          const favouriteData = await Favourite.findAll({
+          const favouriteData = await User.findOne({
+            where: {id: req.params.id},
             include: [
               {
-                model: Book
+                model: Book,
+                through: Favourite
               }],
           });
     
-          const favourites = favouriteData.map((favourite) => favourite.get({ plain: true }));
+          const favourites = favouriteData.get({ plain: true });
           res.render('favourites', { 
             favourites,
             // logged_in: true
