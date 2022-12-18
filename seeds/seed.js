@@ -8,11 +8,8 @@ const seedAll = async () => {
   await sequelize.sync({ force: true });
 
   await seedUser();
-
   await seedBook();
-
   await seedReview();
-
   await seedFavourite();
 
   process.exit(0);
