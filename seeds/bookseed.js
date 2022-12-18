@@ -11,13 +11,13 @@ const books = [
       title: 'To Kill a Mockingbird',
       author: 'Harper Lee',
       year_published: 1960,
-      must_read: false
+      must_read: true
     },
     {
       title: 'Pride and Prejudice',
       author: 'Jane Austen',
       year_published: 1813,
-      must_read: false
+      must_read: true
     },
     {
       title: 'Moby-Dick',
