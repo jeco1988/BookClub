@@ -1,12 +1,12 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
   
-    const email = document.querySelector('#email-login').value.trim();
+    const user = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
   
-    if (email && password) {
+    if (user && password) {
       const response = await axios.post('/api/users/login', {
-        data: { email, password }
+        data: { user, password }
       });
   
       if (response.ok) {

@@ -2,7 +2,11 @@
             <aside id="mustread" class="aside">
                 <h3>Must Read</h3>
                 <div id="must-read">
-                    {{mustread}}
+                    {{#each books as |book|}}
+                    <h5>{{book.title}}</h5>
+                    <p>by {{book.author}}</p>
+                    <p>published {{book.year_published}}</p>
+                    {{/each}}
                 </div>
             </aside>
 </div>

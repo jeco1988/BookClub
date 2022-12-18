@@ -1,37 +1,74 @@
 {
 
   "name": "bookclub",
+
   "version": "1.0.0",
+
   "description": "BookClub is an online book enthusiasts database whereby the user can login and submit their recommended book title, along with an image and a brief review.",
+
   "main": "server.js",
+
   "scripts": {
+
     "test": "echo \"Error: no test specified\" && exit 1",
+
     "start": "node server.js",
+
     "seed": "node seeds/seed.js"
+
   },
+
   "repository": {
+
     "type": "git",
+
     "url": "git+https://github.com/jeco1988/BookClub.git"
+
   },
+
   "author": "",
+
   "license": "ISC",
+
   "dependencies": {
+
     "axios": "^1.2.1",
+
+    "bcrypt": "^5.1.0",
+
     "bootstrap": "^5.2.3",
+
     "console.table": "^0.10.0",
+
     "dotenv": "^16.0.3",
-    "handlebars": "^4.7.7",
-    "heroku": "^7.67.1",
-    "inquirer": "^9.1.4",
-    "mysql2": "^2.3.3",
-    "normalize.css": "^8.0.1",
-    "sequelize": "^6.26.0",
+
     "express": "^4.17.1",
+
     "express-handlebars": "^5.2.0",
-    "express-session": "^1.17.1"
+
+    "express-session": "^1.17.1",
+
+    "handlebars": "^4.7.7",
+
+    "heroku": "^7.67.1",
+
+    "inquirer": "^9.1.4",
+
+    "mysql2": "^2.3.3",
+
+    "normalize.css": "^8.0.1",
+
+    "sequelize": "^6.26.0"
+
   },
+
   "bugs": {
+
     "url": "https://github.com/jeco1988/BookClub/issues"
+
   },
+
   "homepage": "https://github.com/jeco1988/BookClub#readme"
+
 }
+
