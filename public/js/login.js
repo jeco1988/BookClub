@@ -1,23 +1,18 @@
 const loginFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const user = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (user && password) {
-      const response = await axios.post('/api/users/login', {
-        data: { user, password }
-      });
-  
-      if (response.ok) {
-        document.location.replace('/favourites');
-      } else {
-        alert('Failed to log in');
-      }
+  event.preventDefault();
+  const user_name = document.querySelector('#email-input').value.trim();
+  const password = document.querySelector('#password-input').value.trim();
+  if (user_name && password) {
+    const response = await axios.post('/api/users/login', {
+      data: { user_name, password }
+    });
+    if (response.status === 200) {
+      document.location.replace('/favourites');
+    } else {
+      alert('Failed to log in');
     }
-  };
-  
-  document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
-  
+  }
+};
+document
+  .querySelector('.login')
+  .addEventListener('submit', loginFormHandler);
