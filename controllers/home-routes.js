@@ -3,6 +3,7 @@ const Book = require('../models/Book');
 const Review = require('../models/Review');
 const Favourite = require('../models/Favourite');
 const withAuth = require('../utils/auth');
+const { User } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
@@ -25,6 +26,16 @@ router.get('/', async (req, res) => {
     try {
       const reviewsData = await Review.findAll({
        order: [['review_date', 'ASC']],
+       include: [
+        {
+          model: User,
+          attributes: ['user_name'],
+        },
+        {
+          model: Book,
+          attributes: ['title'],
+        },
+       ],
       });
 
       const reviews = reviewsData.map((review) => review.get({ plain: true }));
@@ -37,8 +48,7 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.get('/favourites', //withAuth,
-   async (req, res) => {
+  router.get('/favourites/:id', withAuth, async (req, res) => {
         try {
           const favouriteData = await User.findOne({
             where: {id: req.params.id},
@@ -60,12 +70,6 @@ router.get('/', async (req, res) => {
       });
 
   router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    // if (req.session.logged_in) {
-    //   res.redirect('/favourites');
-    //   return;
-    // }
-  
     res.render('login');
   });
 

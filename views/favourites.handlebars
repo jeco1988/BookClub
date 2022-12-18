@@ -2,7 +2,9 @@
             <aside id="favourites" class="aside">
                 <h3>My favourites</h3>
                 <div id="favourite-books">
-                    {{favourites}}
+                    {{#each favourite in favourites}}
+                    <h5>{{favourite.book.title}}</h5>
+                    {{/each}}
                 </div>
             </aside>
 </div>

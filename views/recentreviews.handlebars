@@ -2,7 +2,11 @@
             <aside id="recentreviews" class="aside">
                 <h3>Recent Reviews</h3>
                 <div id="recent-reviews">
-                    {{recentreviews}}
+                    {{#each reviews as |review|}}
+                    <h5>Book title: {{review.book.title}}</h5>
+                    <p>By: {{review.user.user_name}}</p>
+                    <p>Review: {{review.review}}</p>
+                    {{/each}}
                 </div>
             </aside>
 </div>
