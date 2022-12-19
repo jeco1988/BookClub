@@ -48,10 +48,14 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.get('/favourites/:id', withAuth, async (req, res) => {
+  router.get('/favourites', withAuth, async (req, res) => {
+    if(!req.session.logged_in){
+      res.render('login');
+      return
+    }
         try {
           const favouriteData = await User.findOne({
-            where: {id: req.params.id},
+            where: {id: req.session.user_id},
             include: [
               {
                 model: Book,
