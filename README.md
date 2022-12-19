@@ -2,7 +2,7 @@
 
 BookClub is an online book enthusiasts database whereby the user can browse their favourite book titles, and write a brief review.
 
-Deployed URL of the application: https://bookclub.herokuapp.com/
+Deployed URL of the application: https://aqueous-woodland-15580.herokuapp.com/
 
 ![Screenshot](./public/assets/BookClubSignUp.png)
 
